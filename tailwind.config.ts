@@ -5,10 +5,10 @@ import { fontFamily } from "tailwindcss/defaultTheme"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -22,6 +22,13 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        quicksand: ["var(--font-quicksand)", ...fontFamily.sans],
+        roboto: ["var(--font-roboto)", ...fontFamily.sans],
+      },
+      colors: {
+        cBlue: "var(--cBlue)",
+        cDark: "var(--cDark)",
+        cGrey: "var(--cGrey)",
       },
       keyframes: {
         "accordion-down": {
@@ -40,6 +47,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
 export default config
