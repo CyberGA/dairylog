@@ -39,7 +39,7 @@ export default function RootLayout({
         )}
       >
         <NavigationHeader />
-        <main className="container">
+        <main className="container ">
           {children}
         </main>
         <Footer />
