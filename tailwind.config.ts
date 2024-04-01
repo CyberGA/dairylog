@@ -23,7 +23,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         quicksand: ["var(--font-quicksand)", ...fontFamily.sans],
-        roboto: ["var(--font-roboto)", ...fontFamily.sans],
+        bungee: ["var(--font-bungee)", ...fontFamily.sans],
       },
       colors: {
         cBlue: "var(--cBlue)",

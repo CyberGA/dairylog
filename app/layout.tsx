@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter as FontSans, Quicksand, Roboto } from "next/font/google";
+import { Inter as FontSans, Quicksand, Bungee } from "next/font/google";
 import { cn } from "@/lib/utils";
 import NavigationHeader from "@/components/navigation-header";
-import Footer from "@/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -14,10 +13,10 @@ const fontQuicksand = Quicksand({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-quicksand",
 });
-const fontRoboto = Roboto({
+const fontBungee = Bungee({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-roboto",
+  weight: ["400"],
+  variable: "--font-bungee",
 });
 
 export const metadata: Metadata = {
@@ -35,14 +34,13 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-white font-sans antialiased",
-          fontSans.variable, fontQuicksand.variable, fontRoboto.variable
+          fontSans.variable, fontQuicksand.variable, fontBungee.variable
         )}
       >
         <NavigationHeader />
-        <main className="container ">
+        <main>
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );
