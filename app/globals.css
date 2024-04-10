@@ -2,31 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-    --cBlue: #4E3CFF;
-    --cDark: #0D0A1E;
-    --cGrey: #939293;
+  --cBlue: #4e3cff;
+  --cDark: #0d0a1e;
+  --cGrey: #939293;
 }
 
 body {
-    margin: 0;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  }
-  
-  button,
-  select {
-    text-transform: none;
-  }
+  margin: 0;
+  font-family: var(--font-quicksand);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}

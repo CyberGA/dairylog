@@ -1,7 +1,6 @@
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
-import { features } from "process";
 
 const dairLogFeatures = [
   "Free use",
@@ -41,7 +40,7 @@ export default function Page() {
         </div>
       </div>
       <div className="py-20 px-5 flex flex-col items-center font-quicksand">
-        <Image src="/images/lock.png" alt="Security" width={100} height={100} />
+        <Image src="/images/lock.png" alt="Security" width={100} height={100}  />
         <h1 className="text-[34px] text-center font-bold text-cBlue leading-tight my-10 font-bungee">
           Private and Secure
         </h1>

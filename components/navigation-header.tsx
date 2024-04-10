@@ -15,13 +15,16 @@ const NavigationHeader = () => {
           : "backdrop-blur-md bg-white/30"
       }`}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center gap-8 justify-between">
         <div className="">
           <Image
             src="/images/brand-logo.svg"
             alt="Brand logo"
             width={180}
             height={64}
+            style={{
+              height: "auto",
+            }}
             className="w-[150px] h-[48px] lg:w-[180px] sm:h-16 duration-300"
             priority
           />
@@ -58,7 +61,7 @@ const NavigationHeader = () => {
             Contact
           </Link>
         </div>
-        <div className="flex gap-4 items-center">
+        <div className="hidden sm:flex gap-4 items-center">
           <Link href="/login">
             <div className="border  border-cBlue hover:shadow-md px-6 py-2 text-cDark cursor-pointer rounded-full duration-300">
               Login

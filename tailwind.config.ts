@@ -21,9 +21,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        quicksand: ["var(--font-quicksand)", ...fontFamily.sans],
-        bungee: ["var(--font-bungee)", ...fontFamily.sans],
+        quicksand: ["var(--font-quicksand)", ...fontFamily.serif],
+        bungee: ["var(--font-bungee)", ...fontFamily.serif],
       },
       colors: {
         cBlue: "var(--cBlue)",

@@ -42,18 +42,16 @@ const faqsList: {
 
 const FAQs = () => {
     return (
-        <Accordion type="single" collapsible className="max-w-2xl mx-auto px-5">
-            {
-                faqsList.map((item, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger className="text-cBlue">{item.trigger}</AccordionTrigger>
-                        <AccordionContent>
-                            {item.content}
-                        </AccordionContent>
-                    </AccordionItem>
-                ))
-            }
-        </Accordion>
+      <Accordion type="single" collapsible className="max-w-2xl mx-auto px-5">
+        {faqsList.map((item, index) => (
+          <AccordionItem key={index} value={`item-${index}`}>
+            <AccordionTrigger className="text-cBlue text-left">
+              {item.trigger}
+            </AccordionTrigger>
+            <AccordionContent>{item.content}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     );
 }
 
