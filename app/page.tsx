@@ -100,7 +100,7 @@ export default function Home() {
         <div className="w-full flex justify-center mt-6">
           <Link href="/register">
             <div className="w-fit bg-cBlue hover:shadow-md px-10 py-5 text-white cursor-pointer rounded-full duration-300">
-              Get Started Now - It's free!
+              Get Started Now - It&#39;s free!
             </div>
           </Link>
         </div>
