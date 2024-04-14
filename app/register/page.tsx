@@ -86,7 +86,7 @@ export default function Page() {
                     />
                 </label>
                 <label htmlFor="dob" className="mb-4 w-full">
-                    <p className="text-cDark">Confirm Password</p>
+                    <p className="text-cDark">Date of Birth</p>
                     <input
                         type="date"
                         name="dob"

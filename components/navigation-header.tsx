@@ -7,6 +7,10 @@ import { useSelectedLayoutSegment } from "next/navigation";
 const NavigationHeader = () => {
   const segment = useSelectedLayoutSegment();
 
+  if (segment == "dashboard") {
+    return null
+  }
+
   return (
     <nav
       className={`px-5 py-7 sticky z-[99] top-0 font-quicksand border-b ${

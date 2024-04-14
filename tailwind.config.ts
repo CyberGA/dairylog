@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
-import { fontFamily } from "tailwindcss/defaultTheme"
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config = {
   darkMode: ["class"],
@@ -23,6 +23,9 @@ const config = {
       fontFamily: {
         quicksand: ["var(--font-quicksand)", ...fontFamily.serif],
         bungee: ["var(--font-bungee)", ...fontFamily.serif],
+      },
+      backgroundImage: {
+        action: "linear-gradient(to bottom, #ebebea, #c2c1be);",
       },
       colors: {
         cBlue: "var(--cBlue)",
@@ -48,4 +51,4 @@ const config = {
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
-export default config
+export default config;
