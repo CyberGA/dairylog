@@ -2,21 +2,21 @@
 
 import EntryHeader from "@/components/entry-header";
 import Loader from "@/components/loader";
-import { useEntriesContext } from "@/contexts/entries-context";
 import { useGlobalContext } from "@/contexts/global-context";
 import { instance } from "@/lib/axios";
 import requests from "@/lib/requests";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { toast } from "sonner";
 
-export default function EntryDetails({ params }: { params: { id: string } }) {
-  const { selectedEntry } = useEntriesContext();
+export default function CreateEntry() {
+  const router = useRouter();
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const { user } = useGlobalContext();
 
-  function saveHandler() {
+  function CreateEntryHandler() {
     if (!user) return;
     if (!title.length || !content.length) {
       toast.error("Cannot add empty entry");
@@ -25,13 +25,13 @@ export default function EntryDetails({ params }: { params: { id: string } }) {
 
     setLoading((prev) => true);
     instance
-      .put(`${requests.entries}?user_name=${user["username"]}`, {
-        id: params.id,
+      .post(`${requests.createEntry}?user_name=${user["username"]}`, {
         title,
         entry: content,
       })
       .then((res) => {
-        toast.success("Updated Successfully");
+        toast.success("Entry Created SUccessfully");
+        router.push("/dashboard/entries");
       })
       .catch((err) => {
         if (err.response["data"] && err.response["data"]["detail"]) {
@@ -44,19 +44,12 @@ export default function EntryDetails({ params }: { params: { id: string } }) {
         setLoading((prev) => false);
       });
   }
-
-  useEffect(() => {
-    if (selectedEntry) {
-      setTitle(selectedEntry.title);
-      setContent(selectedEntry.content);
-    }
-  }, [selectedEntry]);
-
   return (
     <>
       <EntryHeader />
       <div className="flex flex-col gap-2 font-quicksand w-full max-w-3xl mx-auto mb-3 py-10">
         <label htmlFor="title" className="mb-4 w-full">
+          {/* <p className="text-cDark">Email Address</p> */}
           <input
             type="text"
             name="title"
@@ -90,10 +83,10 @@ export default function EntryDetails({ params }: { params: { id: string } }) {
           <Loader />
         ) : (
           <button
-            onClick={saveHandler}
+            onClick={CreateEntryHandler}
             className="w-full h-12 bg-cBlue text-white rounded-lg hover:font-bold duration-300"
           >
-            Save
+            Create Entry
           </button>
         )}
       </div>

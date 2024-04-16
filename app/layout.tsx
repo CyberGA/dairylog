@@ -3,12 +3,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import NavigationHeader from "@/components/navigation-header";
 import localFont from "next/font/local";
-
-// const fontQuicksand = Quicksand({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "500", "600", "700"],
-//   variable: "--font-quicksand",
-// });
+import { Toaster } from "sonner";
+import GlobalProvider from "@/contexts/global-context";
 
 const fontBungee = localFont({
   display: "swap",
@@ -41,8 +37,11 @@ export default function RootLayout({
           fontBungee.variable
         )}
       >
-        <NavigationHeader />
-        <main>{children}</main>
+        <GlobalProvider>
+          <NavigationHeader />
+          <main>{children}</main>
+          <Toaster position="top-right" />
+        </GlobalProvider>
       </body>
     </html>
   );

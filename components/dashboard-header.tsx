@@ -29,13 +29,13 @@ export default function DashboardHeader() {
             />
           </div>
           <div className="flex gap-2">
-            <div title="New Entry" className="w-fit flex items-center gap-1 h-auto bg-action p-3 rounded-md cursor-pointer hover:text-cBlue font-semibold duration-300">
+            <div onClick={() => router.push("/dashboard/entries/new")} title="New Entry" className="w-fit flex items-center gap-1 h-auto bg-action p-3 rounded-md cursor-pointer hover:text-cBlue font-semibold duration-300">
               <TfiWrite /> Create New Entry
             </div>
-            <div onClick={logoutHandler} className="flex items-center gap-1 cursor-pointer hover:scale-105 duration-300">
+            {/* <div onClick={logoutHandler} className="flex items-center gap-1 cursor-pointer hover:scale-105 duration-300">
               <FaPowerOff color="#fff" size="14px" />
               <p className="text-white font-semibold">Logout</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
